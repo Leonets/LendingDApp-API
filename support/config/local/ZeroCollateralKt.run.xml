@@ -1,0 +1,25 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ZeroCollateralKt" type="JetRunConfigurationType" nameIsGenerated="true">
+    <envs>
+      <env name="DB_HOST_AND_PORT" value="localhost:3306" />
+      <env name="DB_NAME" value="RETURNS_IMAGES_PROCESSING_CACHE" />
+      <env name="DB_PASS" value="root" />
+      <env name="DB_USER" value="root" />
+      <env name="DEVELOPMENT_MODE" value="true" />
+      <env name="SERVICE_BASE_URL" value="http://localhost:8081" />
+      <env name="SERVICE_PASS" value="test" />
+      <env name="SERVICE_USER" value="test" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="xrd.zerocollateral.ZeroCollateralKt" />
+    <module name="ZeroCollateral.main" />
+    <shortenClasspath name="NONE" />
+    <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+      <option name="credential" />
+      <option name="region" />
+      <option name="useCurrentConnection" value="false" />
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

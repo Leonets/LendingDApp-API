@@ -1,0 +1,293 @@
+openapi: "3.0.0"
+info:
+  title: "Trapezite"
+  description: |
+    Trapezite
+
+  contact:
+    name: "Trapezite Team"
+  version: "<version>"
+
+components:
+  responses:
+    Unauthorized:
+      description: "User not authenticated"
+    BadRequest:
+      description: "Malformed request"
+      content:
+        application/json:
+          schema:
+            type: object
+            example:
+              {}
+    NotFound:
+      description: "The requested ID was not found"
+
+  schemas:
+    ChallengeSchema:
+      properties:
+        dAppDefinitionAddress:
+          type: string
+          description: dAppDefinitionAddress reference
+      example:
+        {
+          "applicationName": "Trapezite",
+          "dAppDefinitionAddress": "account_rdx",
+          "origin": "https://stokenet.trapezite.com/",
+          "timeout": 60,
+          "networkId": 1
+        }
+
+paths:
+  "/infra/health":
+    get:
+      summary: "Retrieves basic service build information"
+      operationId: "Health Check"
+      tags:
+        - Infrastructure
+      responses:
+        default:
+          description: "Default response"
+          content:
+            application/json:
+              example:
+                {}
+        "200":
+          description: "Basic service build information"
+          content:
+            application/json:
+              schema:
+                type: object
+
+  "/api/config/static":
+    get:
+      summary: "Lookup basic service config static parameters"
+      tags:
+        - Config
+      responses:
+        default:
+          description: "Default response"
+          content:
+            application/json:
+              example:
+                { }
+        "200":
+          description: "The requested basic config parameters"
+          content:
+            application/json:
+              schema:
+                type: object
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+
+
+
+
+  "/api/coins/":
+    get:
+      summary: "Retrieves details of coins for which there is at least one active market"
+      operationId: "Retrieves details of coins for which there is at least one active market"
+      tags:
+        - Operation
+      parameters:
+        - in: query
+          name: allowedTuser
+          schema:
+            type: string
+          required: true
+          description: allowedTuser reference
+      responses:
+        "200":
+          description: "Details of coins for which there is at least one active market"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  logs:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        coin:
+                          type: string
+                        symbol:
+                          type: string
+                        name:
+                          type: string
+                        icon_url:
+                          type: string
+                example:
+                  coins:
+                    [
+                      {
+                        coin: "Unknown Coin",
+                        symbol: "XCOI",
+                        name: "X-Coin",
+                        icon_url: "http://test.io/x.jpb"
+                      }
+                    ]
+        "400":
+          $ref: '#/components/responses/BadRequest'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+  "/api/markets/":
+    get:
+      summary: "List of markets where a specific coin is traded along with all the details"
+      operationId: "List of markets where a specific coin is traded along with all the details"
+      tags:
+        - Operation
+      parameters:
+        - in: query
+          name: coin
+          schema:
+            type: string
+          required: true
+          description: coin
+        - in: query
+          name: allowedTuser
+          schema:
+            type: string
+          required: true
+          description: allowedTuser
+      responses:
+        "200":
+          description: "List of markets with all the details"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  markets:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        component:
+                          type: string
+                        coin:
+                          type: string
+                        tlender:
+                          type: string
+                        tborrower:
+                          type: string
+                        allowed_tusers:
+                          type: string
+                        rate_type:
+                          type: string
+                        duration_type:
+                          type: string
+                example:
+                  markets:
+                    [
+                      {
+                        component: "compo1",
+                        coin: "X-Coin",
+                        tlender: "lender",
+                        tborrower: "borrower",
+                        allowed_tusers: "REGISTERED",
+                        rate_type: "VARIABLE",
+                        duration_type: "UNLIMITED"
+                      }
+                    ]
+        "400":
+          $ref: '#/components/responses/BadRequest'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+
+  "/api/collateral/":
+    get:
+      summary: "Retrieve the details about the collaterals available in the specified market"
+      operationId: "Retrieve the details about the collaterals available in the specified market"
+      tags:
+        - Operation
+      parameters:
+        - in: query
+          name: componentAddress
+          schema:
+            type: string
+          required: true
+          description: componentAddress reference
+      responses:
+        "200":
+          description: "Retrieve the details about the collaterals available in the specified market"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  logs:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        collateral:
+                          type: string
+                        symbol:
+                          type: string
+                        name:
+                          type: string
+                        icon_url:
+                          type: string
+                example:
+                  collaterals:
+                    [
+                      {
+                        collateral: "Collateral",
+                        symbol: "XCOI",
+                        name: "X-Coin",
+                        icon_url: "http://test.io/x.jpb"
+                      }
+                    ]
+        "400":
+          $ref: '#/components/responses/BadRequest'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+
+  "/api/create-challenge/":
+    post:
+      summary: "Create a challenge for authenticating the user identity and accounts"
+      operationId: "Create a challenge for authenticating the user identity and accounts"
+      tags:
+        - Rola
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChallengeSchema'
+      responses:
+        "200":
+          description: "Details of the newly created challenge"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  challenge:
+                    type: string
+#                  code:
+#                    type: string
+#                  time_utc:
+#                    type: string
+                example:
+                  {
+                    "challenge": "challenge"
+#                    "code": 200,
+#                    "time_utc": 1703151719
+                  }
+        "400":
+          $ref: '#/components/responses/BadRequest'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "404":
+          $ref: '#/components/responses/NotFound'

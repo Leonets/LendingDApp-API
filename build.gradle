@@ -1,0 +1,141 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
+        classpath "com.github.jengelman.gradle.plugins:shadow:${shadowVersion}"
+        classpath "io.github.robwin:jgitflow-gradle-plugin:${gitflowVersion}"
+        classpath "de.undercouch:gradle-download-task:${downloadTaskVersion}"
+        classpath "gradle.plugin.org.barfuin.gradle.taskinfo:gradle-taskinfo:${taskInfoVersion}"
+        classpath "org.flywaydb:flyway-gradle-plugin:${flywayVersion}"
+        classpath "org.flywaydb:flyway-mysql:${flywayVersion}"
+    }
+}
+
+apply plugin: 'org.flywaydb.flyway'
+
+apply plugin: 'de.undercouch.download'
+
+apply plugin: 'io.github.robwin.jgitflow'
+
+initJGitflow {
+    feature = "feature/"
+    release = "release/"
+    hotfix = "hotfix/"
+    master = "master"
+    develop = "develop"
+    versiontag = 'v'
+}
+
+apply plugin: 'org.barfuin.gradle.taskinfo'
+
+apply plugin: 'java'
+
+apply plugin: 'idea'
+
+idea {
+    module {
+        downloadJavadoc = true
+    }
+}
+
+apply plugin: 'application'
+
+mainClassName = "xrd.zerocollateral.ZeroCollateralKt"
+
+apply plugin: 'com.github.johnrengelman.shadow'
+
+shadowJar {
+
+    archiveFileName = "ZeroCollateral.jar"
+
+    mergeServiceFiles()
+
+    manifest {
+        attributes 'Main-Class': "$mainClassName"
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        name "JitPack"
+        url 'https://jitpack.io'
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        force "org.slf4j:slf4j-api:${slf4jApiVersion}"
+        force "org.apache.logging.log4j:log4j-api:${log4jVersion}"
+        force "org.apache.logging.log4j:log4j-core:${log4jVersion}"
+        force "org.bouncycastle:bcpg-jdk15on:${bouncyCastleVersion}"
+    }
+}
+
+apply plugin: 'kotlin'
+
+compileKotlin.kotlinOptions.jvmTarget = "11"
+compileTestKotlin.kotlinOptions.jvmTarget = "11"
+compileTestKotlin.kotlinOptions.freeCompilerArgs += "-Xjvm-default=all"
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+test {
+    useJUnitPlatform()
+
+    failFast = true
+
+    testLogging {
+        showStandardStreams = true
+        exceptionFormat = 'full'
+    }
+
+    // listen to events in the test execution lifecycle
+    beforeTest { descriptor ->
+        logger.lifecycle("Running " + descriptor)
+    }
+
+}
+
+dependencies {
+    implementation platform("org.http4k:http4k-bom:${http4kVersion}")
+    implementation platform("com.fasterxml.jackson:jackson-bom:${jacksonVersion}")
+    implementation "org.http4k:http4k-cloudnative"
+    implementation "org.http4k:http4k-core"
+    implementation "org.http4k:http4k-format-jackson"
+    implementation "org.http4k:http4k-server-jetty"
+    implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-csv"
+    implementation "ch.qos.logback:logback-classic:${logbackVersion}"
+    implementation "net.logstash.logback:logstash-logback-encoder:${logbackLogstashEncoderVersion}"
+    implementation "commons-codec:commons-codec:${commonsCodecVersion}"
+    implementation "io.github.microutils:kotlin-logging-jvm:${kotlinLoggingVersion}"
+    implementation "commons-io:commons-io:${commonsIoVersion}"
+    implementation "com.github.jasync-sql:jasync-mysql:${jasyncMysqlVersion}"
+    implementation "mysql:mysql-connector-java:${mysqlConnectorVersion}"
+    implementation "com.gucci.oms:oms-commons-jackson-document:${jacksonDocumentVersion}"
+    implementation "com.jayway.jsonpath:json-path:${jaywayVersion}"
+}
+
+task downloadAgent(type: Download) {
+    src System.getenv('DD_AGENT_LOCATION')
+    dest "${buildDir}/extra/dd-java-agent.jar"
+    onlyIfModified false
+    overwrite true
+}
+
+task migrateDatabase(type: org.flywaydb.gradle.task.FlywayMigrateTask) {
+    if (project.hasProperty("flywayJdbcUrl") && project.hasProperty("flywayJdbcUser") && project.hasProperty("flywayJdbcPass")) {
+        url = "${flywayMigrationJdbcUrl}"
+        user = "${flywayMigrationJdbcUser}"
+        password = "${flywayMigrationJdbcPass}"
+        locations = ['classpath:db/mysql/migration']
+    }
+}
