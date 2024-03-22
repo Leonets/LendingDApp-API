@@ -99,9 +99,9 @@ fun main() {
     )
 
     val rolaRoutes = routes(
-        "$apiBase/create-challenge" bind Method.POST to basicAuthFilter(ChallengeStore.createChallenge()),
-        "$apiBase/verify" bind Method.POST to basicAuthFilter(ChallengeStore.verifyChallenge()
-    ))
+        "$apiBase/create-challenge" bind Method.POST to ChallengeStore.createChallenge(),
+        "$apiBase/verify" bind Method.POST to ChallengeStore.verifyChallenge()
+    )
 
     val scrollPath = "$apiBase/catalog/datasets"
 

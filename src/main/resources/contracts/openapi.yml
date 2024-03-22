@@ -37,6 +37,47 @@ components:
           "timeout": 60,
           "networkId": 1
         }
+    VerifyChallenge:
+      type: object
+      properties:
+        challenge:
+          type: string
+        proof:
+          type: object
+          properties:
+            publicKey:
+              type: string
+            signature:
+              type: string
+            curve:
+              type: string
+        address:
+          type: string
+        type:
+          type: string
+      example:
+          [
+            {
+              "challenge": "f0c5022a2c381b51f2a9d2245e4bac20cdd151f6db90f83f3f2edcf6fe755fe8",
+              "proof": {
+                "publicKey": "a12f3b6884797a44d979907eaaaba52644592d4d4e6093098311e67620e9d9cf",
+                "signature": "4adca8d7b47d6b8bc8a085c08522ab3127e2675f3d09f6c56e44f7cd12dc3ae5b915ed5d395cba941be250d29a454863318c764fc56c17e11a11563381a5ab01",
+                "curve": "curve25519"
+              },
+              "address": "identity_tdx_2_12fhdtpga9dykpzjvjccy5j6mpt25lgvhwce53rrn869fdxvdeq86t9",
+              "type": "persona"
+            },
+            {
+              "proof": {
+                "publicKey": "71b480232435963743746d6d4924b1ee4cf4b1e23acc594d816ceaac5c50ee22",
+                "signature": "1a882376232524621f78766f389710b8c89ce204568da1d0e84b61366c2c3e820c4f491b9f8189ee0a848100420d61f730d4317dea7f88e911697826775c4300",
+                "curve": "curve25519"
+              },
+              "address": "account_tdx_2_12870m7gklv3p90004zjnm39jrhpf2vseejrgpncptl7rhsagz8yjm9",
+              "challenge": "f0c5022a2c381b51f2a9d2245e4bac20cdd151f6db90f83f3f2edcf6fe755fe8",
+              "type": "account"
+            }
+          ]
 
 paths:
   "/infra/health":
@@ -81,178 +122,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 
 
-
-
-  "/api/coins/":
-    get:
-      summary: "Retrieves details of coins for which there is at least one active market"
-      operationId: "Retrieves details of coins for which there is at least one active market"
-      tags:
-        - Operation
-      parameters:
-        - in: query
-          name: allowedTuser
-          schema:
-            type: string
-          required: true
-          description: allowedTuser reference
-      responses:
-        "200":
-          description: "Details of coins for which there is at least one active market"
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  logs:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        coin:
-                          type: string
-                        symbol:
-                          type: string
-                        name:
-                          type: string
-                        icon_url:
-                          type: string
-                example:
-                  coins:
-                    [
-                      {
-                        coin: "Unknown Coin",
-                        symbol: "XCOI",
-                        name: "X-Coin",
-                        icon_url: "http://test.io/x.jpb"
-                      }
-                    ]
-        "400":
-          $ref: '#/components/responses/BadRequest'
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "404":
-          $ref: '#/components/responses/NotFound'
-
-  "/api/markets/":
-    get:
-      summary: "List of markets where a specific coin is traded along with all the details"
-      operationId: "List of markets where a specific coin is traded along with all the details"
-      tags:
-        - Operation
-      parameters:
-        - in: query
-          name: coin
-          schema:
-            type: string
-          required: true
-          description: coin
-        - in: query
-          name: allowedTuser
-          schema:
-            type: string
-          required: true
-          description: allowedTuser
-      responses:
-        "200":
-          description: "List of markets with all the details"
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  markets:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        component:
-                          type: string
-                        coin:
-                          type: string
-                        tlender:
-                          type: string
-                        tborrower:
-                          type: string
-                        allowed_tusers:
-                          type: string
-                        rate_type:
-                          type: string
-                        duration_type:
-                          type: string
-                example:
-                  markets:
-                    [
-                      {
-                        component: "compo1",
-                        coin: "X-Coin",
-                        tlender: "lender",
-                        tborrower: "borrower",
-                        allowed_tusers: "REGISTERED",
-                        rate_type: "VARIABLE",
-                        duration_type: "UNLIMITED"
-                      }
-                    ]
-        "400":
-          $ref: '#/components/responses/BadRequest'
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "404":
-          $ref: '#/components/responses/NotFound'
-
-
-  "/api/collateral/":
-    get:
-      summary: "Retrieve the details about the collaterals available in the specified market"
-      operationId: "Retrieve the details about the collaterals available in the specified market"
-      tags:
-        - Operation
-      parameters:
-        - in: query
-          name: componentAddress
-          schema:
-            type: string
-          required: true
-          description: componentAddress reference
-      responses:
-        "200":
-          description: "Retrieve the details about the collaterals available in the specified market"
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  logs:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        collateral:
-                          type: string
-                        symbol:
-                          type: string
-                        name:
-                          type: string
-                        icon_url:
-                          type: string
-                example:
-                  collaterals:
-                    [
-                      {
-                        collateral: "Collateral",
-                        symbol: "XCOI",
-                        name: "X-Coin",
-                        icon_url: "http://test.io/x.jpb"
-                      }
-                    ]
-        "400":
-          $ref: '#/components/responses/BadRequest'
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "404":
-          $ref: '#/components/responses/NotFound'
-
-
   "/api/create-challenge/":
     post:
       summary: "Create a challenge for authenticating the user identity and accounts"
@@ -284,6 +153,40 @@ paths:
                     "challenge": "challenge"
 #                    "code": 200,
 #                    "time_utc": 1703151719
+                  }
+        "400":
+          $ref: '#/components/responses/BadRequest'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+
+  "/api/verify/":
+    post:
+      summary: "Verify a challenge for authenticating the user identity and accounts"
+      operationId: "Verify a challenge for authenticating the user identity and accounts"
+      tags:
+        - Rola
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VerifyChallenge'
+      responses:
+        "200":
+          description: "Details of the newly created challenge"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  verification:
+                    type: string
+                example:
+                  {
+                    "verification": "true"
                   }
         "400":
           $ref: '#/components/responses/BadRequest'

@@ -122,6 +122,11 @@ dependencies {
     implementation "mysql:mysql-connector-java:${mysqlConnectorVersion}"
     implementation "com.gucci.oms:oms-commons-jackson-document:${jacksonDocumentVersion}"
     implementation "com.jayway.jsonpath:json-path:${jaywayVersion}"
+
+    implementation("org.bouncycastle:bcprov-jdk15on:1.69") // Bouncy Castle library for Blake2b hashing
+    implementation("org.bouncycastle:bcpkix-jdk15on:1.69") // Bouncy Castle library for Blake2b hashing
+    implementation("org.json:json:20210307") // JSONObject library
+
 }
 
 task downloadAgent(type: Download) {

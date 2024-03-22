@@ -51,6 +51,17 @@ object Config {
 
     private val developmentModeEnabledKey = EnvironmentKey.boolean().required("DEVELOPMENT_MODE")
 
+    private val proxyUsernameKey = EnvironmentKey.string().optional("PROXY_USER")
+
+    private val proxyPassKey = EnvironmentKey.string().optional("PROXY_PASS")
+
+    private val proxyBaseUrlKey = EnvironmentKey.string().optional("PROXY_BASE_URL")
+
+    private val proxyConnectionTimeoutMillisKey = EnvironmentKey.int().optional("PROXY_CONNECTION_TIMEOUT_MILLIS")
+
+    private val proxyRequestTimeoutMillisKey = EnvironmentKey.int().optional("PROXY_REQUEST_TIMEOUT_MILLIS")
+
+
     private val env = MapEnvironment.from(System.getProperties(), separator = propsSeparator) overrides
             MapEnvironment.from(System.getenv().toProperties(), separator = propsSeparator) overrides
             Environment.defaults(
@@ -102,5 +113,15 @@ object Config {
     val buildTime = serviceBuildTimeKey[env] ?: "Not Assigned"
 
     val developmentModeEnabled = developmentModeEnabledKey[env]
+
+    val proxyUsername = proxyUsernameKey[env]
+
+    val proxyPass = proxyPassKey[env]
+
+    val proxyBaseUrl = proxyBaseUrlKey[env]
+
+    val proxyConnectionTimeout = proxyConnectionTimeoutMillisKey[env]
+
+    val proxyRequestTimeoutMillis = proxyRequestTimeoutMillisKey[env]
 
 }
