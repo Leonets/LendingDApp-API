@@ -4,12 +4,14 @@ import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
+import lsis.axlsign
+import lsis.toIntArray
+import mu.KLoggable
 import mu.KLogger
 import org.bouncycastle.crypto.digests.Blake2bDigest
 import org.bouncycastle.util.encoders.Hex
 import org.http4k.core.*
 import org.http4k.format.Jackson.auto
-import org.http4k.lens.string
 import xrd.zerocollateral.RequestDocument
 import xrd.zerocollateral.servers.ZeroCollateralHandlers
 import java.net.URI
@@ -104,9 +106,16 @@ class ChallengeRequest(rootNode: JsonNode) : RequestDocument(rootNode) {
 
     val applicationName: String?
         get() = node("$.applicationName").string()
-}
+    val dAppDefinitionAddress: String?
+        get() = node("$.dAppDefinitionAddress").string()
+    val origin: String?
+        get() = node("$.origin").string()
 
-val lens = Body.auto<List<SignedChallenge>>().toLens()
+    val timeout: Int
+        get() = node("$.timeout").intValue()
+    val networkId: Int
+        get() = node("$.networkId").intValue()
+}
 
 class ChallengeMessage(
     val challenge: String
@@ -115,22 +124,11 @@ class VerificationMessage(
     val verification: Boolean
 )
 
-private fun secureRandom(length: Int): String {
-    val random = SecureRandom()
-    val bytes = ByteArray(length)
-    random.nextBytes(bytes)
-    return bytes.joinToString("") { "%02x".format(it) }
-}
+data class Challenge(val expires: Long, val dAppDefinitionAddress: String, val origin: String, val timeout: Int)
 
-private data class Challenge(val expires: Long)
+object ChallengeStore : KLoggable {
 
-object ChallengeStore : HttpHandler {
-
-    val logger: KLogger = ZeroCollateralHandlers.logger()
-
-    private val bodyLens = Body.string(contentType = ContentType.APPLICATION_JSON).toLens()
-
-    override fun invoke(req: Request): Response = Response(Status.OK).with(bodyLens of create())
+    override val logger: KLogger = ZeroCollateralHandlers.logger()
 
     private val challenges = HashMap<String, Challenge>()
 
@@ -140,8 +138,16 @@ object ChallengeStore : HttpHandler {
     fun createChallenge() = { request: Request ->
         val bodyLens = Body.auto<JsonNode>().map { ChallengeRequest(it) }.toLens()
         val searchRequest = bodyLens(request)
-        logger.info { " application name ${searchRequest.applicationName}" }
-        Response(Status.OK).with(Body.auto<ChallengeMessage>().toLens() of ChallengeMessage(create()))
+        when {
+            searchRequest.dAppDefinitionAddress.isNullOrBlank()
+                || searchRequest.timeout<=0
+                || searchRequest.origin.isNullOrBlank() -> Response(Status.BAD_REQUEST)
+            else -> {
+                logger.info { "ApplicationName / dAppDefinitionAddress / origin " +
+                        " ${searchRequest.applicationName} - ${searchRequest.dAppDefinitionAddress} - ${searchRequest.origin}" }
+                Response(Status.OK).with(Body.auto<ChallengeMessage>().toLens() of ChallengeMessage(create(searchRequest)))
+            }
+        }
     }
 
     //main function to verify a Challenge
@@ -149,44 +155,65 @@ object ChallengeStore : HttpHandler {
         logger.info( " request ${request.bodyString() }" )
         val signedChallenges: List<SignedChallenge> = lens(request)
 
-        val isChallengeValid = signedChallenges.all { challenge ->
-            ChallengeStore.verify(challenge)
+        when {
+            signedChallenges.filter { it.type == "account" }.size == 0
+                                    -> Response(Status.BAD_REQUEST)
+            else -> {
+                val firstVerificationChallenge = signedChallenges
+                    .filter { it.type == "account" }
+                    .firstOrNull()
+                val verificationResult = verify(firstVerificationChallenge!!)
+
+                when {
+                    signedChallenges
+                        .filter { it.type == "account" }
+                        .all { verificationChallenge ->
+                            verificationResult.isVerified
+                        } -> {
+                        val authenticated = verifyChallengeWithLedger(signedChallenges, verificationResult.removedChallenge)
+                        logger.info("authenticated => $authenticated")
+                        Response(Status.OK).with(Body.auto<VerificationMessage>().toLens() of VerificationMessage(authenticated))
+                    }
+                    else -> {
+                        Response(Status.CLIENT_TIMEOUT).with(Body.auto<VerificationMessage>().toLens() of VerificationMessage(false))
+                    }
+                }
+            }
         }
-
-        if (!isChallengeValid) {
-            Response(Status.CLIENT_TIMEOUT).with(Body.auto<String>().toLens() of "Challenge Not Valid Anymore")
-        }
-
-        val authenticated = verifyChallengeWithLedger(signedChallenges)
-        logger.info("authenticated => ${authenticated}")
-
-        Response(Status.OK).with(Body.auto<VerificationMessage>().toLens() of VerificationMessage(authenticated))
     }
 
-    fun verifyChallengeWithLedger(signedChallenges: List<SignedChallenge>) : Boolean {
+    //verify pub_key comparing with that on the ledger using gateway api
+    private fun verifyChallengeWithLedger(signedChallenges: List<SignedChallenge>, removedChallenge: Challenge?) : Boolean {
         signedChallenges
-            .filter { it.type != "account" }
+            .filter { it.type == "account" }
             .map {
                 val challenge = it.challenge
-                val dAppDefinitionAddress = "account_tdx_2_12870m7gklv3p90004zjnm39jrhpf2vseejrgpncptl7rhsagz8yjm9"
-                val origin = "https://test.zerocollateral.eu/"
+                val dAppDefinitionAddress = removedChallenge!!.dAppDefinitionAddress
+                val origin = removedChallenge.origin
 
+                // Construct the signature message
                 val result = createSignatureMessage(challenge, dAppDefinitionAddress, origin)
                 logger.info( " signatureMessage ${it.type} =>  ${result.getOrNull()} ")
 
+                // Hash the publicKey provided in the request body
                 val pubKeyHashed = createPublicKeyHash(it.proof.publicKey)
                 val hashedPublicKey = when (pubKeyHashed.isSuccess) {
                     true -> pubKeyHashed.getOrNull()
                     else -> "failed"
                 }
-                logger.info( " hash of the publicKey provided request body (proof) ${it.type} =>  ${hashedPublicKey} ")
+                logger.info( " hash of the publicKey provided request body (proof) [from request] ${it.type} =>  $hashedPublicKey ")
+
+                // Check if the signature is valid
+                val resultVerifyReal = axlsign.verify(it.proof.publicKey.toIntArray(), result.getOrNull()!!.toIntArray(), it.proof.signature.toIntArray())
+                logger.info { "[axlsign] pubkey => ${it.proof.publicKey}" }
+                logger.info { "[axlsign] signature => ${it.proof.signature}" }
+                logger.info { "[axlsign] signature verified [1=true, 0=false] => $resultVerifyReal" }
 
                 // Define the base URL and request body
                 val baseUrl = "https://stokenet.radixdlt.com/state/entity/details"
                 val addresses = listOf(it.address)
 
                 val requestBodyJson = "{\"addresses\": ${addresses.joinToString(",", "[\"", "\"]")}, \"aggregation_level\": \"Vault\"}"
-                logger.info("Request Body: ${requestBodyJson}")
 
                 // Create HttpClient instance
                 val client = HttpClient.newHttpClient()
@@ -201,39 +228,44 @@ object ChallengeStore : HttpHandler {
 
                 // Send the request and handle the response
                 val response = client.send(request, HttpResponse.BodyHandlers.ofString())
-                logger.info("Response Code: ${response.statusCode()}")
+                logger.info("Response Code from gateway api: ${response.statusCode()}")
                 //            logger.info("Response Body: ${response.body()}")
 
                 val mapper = jacksonObjectMapper()
                 val responseData: LedgerResponse = mapper.readValue(response.body())
 
-                val ownerKeyMetadataValue = responseData.items.get(0).metadata.items.get(0).value.typed.values!!.get(0).hash_hex
-                logger.info("ownerKeyMetadataValue: ${ownerKeyMetadataValue}")
+                // Get owner_keys from metadata if the value is set
+                val ownerKeyMetadataValue = responseData.items[0].metadata.items[0].value.typed.values!![0].hash_hex
+                logger.info("ownerKeyMetadataValue [from ledger] => $ownerKeyMetadataValue")
 
                 return when (hashedPublicKey == ownerKeyMetadataValue) {
                     true -> true
                     else -> false
                 }
-            }
-            .get(0)
+            }[0]
     }
 
     //Utility functions
 
     //creates a Challenge
-    fun create(): String {
+    fun create(challengeRequest: ChallengeRequest): String {
         val challenge = secureRandom(32)
-        val expires = System.currentTimeMillis() + 1000 * 60 * 5 // expires in 5 minutes
-        challenges[challenge] = Challenge(expires)
-        logger.info { " new challenge = " + challenge }
+        val expires = System.currentTimeMillis() + 1000 * challengeRequest.timeout // expires in 5 minutes
+        challenges[challenge] = Challenge(expires, challengeRequest.dAppDefinitionAddress!!, challengeRequest.origin!!, challengeRequest.timeout)
+        logger.info { " new challenge = $challenge expires at $expires" }
         return challenge
     }
 
     //Check if challenge has expired
-    fun verify(signedChallenge: SignedChallenge): Boolean {
+    data class VerificationResult(val isVerified: Boolean, val removedChallenge: Challenge?)
+
+    fun verify(signedChallenge: SignedChallenge): VerificationResult {
         val challengeValue = signedChallenge.challenge
         val challenge = challenges.remove(challengeValue)
-        return challenge?.expires ?: 0 > System.currentTimeMillis()
+        val now = System.currentTimeMillis()
+        val isVerified = (challenge?.expires ?: 0) > now
+        logger.info { " challenge expiring at = $challenge?.expires and now is $now" }
+        return VerificationResult(isVerified, challenge)
     }
 
     //to read the result of hashing
@@ -243,7 +275,7 @@ object ChallengeStore : HttpHandler {
     }
 
     //to hash the publicKey provided request body
-    fun createPublicKeyHash(publicKey: String): Result<String> {
+    private fun createPublicKeyHash(publicKey: String): Result<String> {
         return runCatching {
             val publicKeyBuffer = Hex.decode(publicKey)
             val blake2b = Blake2bDigest(256)
@@ -260,14 +292,14 @@ object ChallengeStore : HttpHandler {
     }
 
     //Construct the signature message
-    fun createSignatureMessage(
+    private fun createSignatureMessage(
         challenge: String,
         dAppDefinitionAddress: String,
         origin: String
     ): Result<String> {
         val prefix = "R".toByteArray(StandardCharsets.US_ASCII)
-        val lengthOfDappDefAddress = "dappAdd"
-        val lengthOfDappDefAddressBuffer = lengthOfDappDefAddress.toByteArray(StandardCharsets.UTF_8)
+        val lengthOfDappDefAddress = dAppDefinitionAddress.length
+        val lengthOfDappDefAddressBuffer = lengthOfDappDefAddress.toString(16).toByteArray(StandardCharsets.US_ASCII)
         val dappDefAddressBuffer = dAppDefinitionAddress.toByteArray(StandardCharsets.UTF_8)
         val originBuffer = origin.toByteArray(StandardCharsets.UTF_8)
         val challengeBuffer = Hex.decode(challenge)
@@ -311,5 +343,12 @@ object ChallengeStore : HttpHandler {
         val hexString = Hex.toHexString(hash)
 
         return Result.success(hexString)
+    }
+
+    private fun secureRandom(length: Int): String {
+        val random = SecureRandom()
+        val bytes = ByteArray(length)
+        random.nextBytes(bytes)
+        return bytes.joinToString("") { "%02x".format(it) }
     }
 }

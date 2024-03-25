@@ -124,8 +124,8 @@ paths:
 
   "/api/create-challenge/":
     post:
-      summary: "Create a challenge for authenticating the user identity and accounts"
-      operationId: "Create a challenge for authenticating the user identity and accounts"
+      summary: "Create a challenge for authenticating the user identity and accounts (timeout expressed in seconds)"
+      operationId: "Create a challenge for authenticating the user identity and accounts (timeout expressed in seconds)"
       tags:
         - Rola
       requestBody:
