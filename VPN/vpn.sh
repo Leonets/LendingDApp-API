@@ -1,1 +1,1 @@
-openvpn --config leo.conf
+sudo openvpn --config leo.conf

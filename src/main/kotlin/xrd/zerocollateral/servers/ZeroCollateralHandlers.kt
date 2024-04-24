@@ -1,6 +1,7 @@
 package xrd.zerocollateral.servers
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.github.jasync.sql.db.mysql.MySQLConnection
 import com.github.jasync.sql.db.pool.ConnectionPool
 import mu.KLoggable
@@ -10,12 +11,13 @@ import org.http4k.core.Status.Companion.NOT_FOUND
 import org.http4k.format.Jackson.auto
 import org.http4k.lens.Lens
 import xrd.zerocollateral.messages.*
+import java.io.File
 
 object ZeroCollateralHandlers: KLoggable {
 
     override val logger: KLogger = logger()
 
-    class TrapeziteDatabaseHandler (private val connectionPool: ConnectionPool<MySQLConnection>) {
+    class DatabaseHandler (private val connectionPool: ConnectionPool<MySQLConnection>) {
 
         private val coinDetailsFullQuery = """
             SELECT DISTINCT c.*
@@ -102,7 +104,7 @@ object ZeroCollateralHandlers: KLoggable {
     }
 
 
-    fun lookupCoinDetails(dataService: TrapeziteDatabaseHandler, allowedTuserLens: Lens<Request, String?>) = { request: Request ->
+    fun lookupCoinDetails(dataService: DatabaseHandler, allowedTuserLens: Lens<Request, String?>) = { request: Request ->
         val allowedTuser = allowedTuserLens(request)
         when {
             allowedTuser.isNullOrBlank() -> Response(Status.BAD_REQUEST)
@@ -117,7 +119,7 @@ object ZeroCollateralHandlers: KLoggable {
         }
     }
 
-    fun lookupMarkets(dataService: TrapeziteDatabaseHandler, coinLens: Lens<Request, String?>, allowedTuserLens: Lens<Request, String?>) = { request: Request ->
+    fun lookupMarkets(dataService: DatabaseHandler, coinLens: Lens<Request, String?>, allowedTuserLens: Lens<Request, String?>) = { request: Request ->
         val coin = coinLens(request)
         val allowedTuser = allowedTuserLens(request).toString()
         when {
@@ -134,7 +136,7 @@ object ZeroCollateralHandlers: KLoggable {
     }
 
 
-    fun lookupCollateral(dataService: TrapeziteDatabaseHandler, componentAddressLens: Lens<Request, String?>) = { request: Request ->
+    fun lookupCollateral(dataService: DatabaseHandler, componentAddressLens: Lens<Request, String?>) = { request: Request ->
         val componentAddress = componentAddressLens(request)
         when {
             componentAddress.isNullOrBlank() -> Response(Status.BAD_REQUEST)
@@ -146,6 +148,32 @@ object ZeroCollateralHandlers: KLoggable {
                     }
                 }
             }
+        }
+    }
+
+/*    fun feedback() = { request: Request -> Response
+        logger.info( " feedback received  ${request.bodyString() }" )
+        Response(Status.OK).with(Body.auto<String>().toLens() of "OK")
+    }*/
+    fun feedback() = { request: Request ->
+        val objectMapper = jacksonObjectMapper()
+
+        try {
+            val bodyString = request.bodyString()
+            logger.info("Feedback received: $bodyString")
+
+            // Parse JSON data into FeedbackData object
+            /*val feedbackData: FeedbackData = objectMapper.readValue(bodyString)
+*/
+            // Write JSON data to a new file (you can generate a unique filename as needed)
+            val fileName = "feedback_${System.currentTimeMillis()}.json"
+            val outputFile = File(fileName)
+            outputFile.writeText(bodyString)
+
+            Response(Status.OK).with(Body.auto<String>().toLens() of "Feedback received and saved as $fileName")
+        } catch (e: Exception) {
+            logger.error("Failed to process feedback", e)
+            Response(Status.INTERNAL_SERVER_ERROR).with(Body.auto<String>().toLens() of "Failed to process feedback")
         }
     }
 

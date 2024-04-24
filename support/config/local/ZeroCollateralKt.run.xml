@@ -6,7 +6,7 @@
       <env name="DB_PASS" value="root" />
       <env name="DB_USER" value="root" />
       <env name="DEVELOPMENT_MODE" value="true" />
-      <env name="SERVICE_BASE_URL" value="http://localhost:8081" />
+      <env name="SERVICE_BASE_URL" value="http://localhost:8082" />
       <env name="SERVICE_PASS" value="test" />
       <env name="SERVICE_USER" value="test" />
     </envs>

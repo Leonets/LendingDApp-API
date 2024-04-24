@@ -32,3 +32,20 @@ class ComponentAddressMessage(
 }
 
 
+//for feedback
+data class FeedbackData(
+    val overall_opinion: String,
+    val functions: List<String>,
+    val understood_contract_protection: String,
+    val loan_protection: List<String>,
+    val errors_occurred: String,
+    val nft_received: String,
+    val nft_removed: String,
+    val feedback: String,
+    val stokenet_address: String,
+    val mainnet_address: String,
+    val telegram_nickname: String,
+    val blackbox_testing: String
+)
+
+

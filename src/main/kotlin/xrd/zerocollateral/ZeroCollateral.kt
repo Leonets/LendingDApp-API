@@ -9,7 +9,7 @@ import xrd.zerocollateral.ServiceLifecycle.ServiceStatus.STARTED
 import xrd.zerocollateral.ServiceLifecycle.ServiceStatus.STOPPED
 import xrd.zerocollateral.ServiceLifecycle.triggers
 import xrd.zerocollateral.http4k.CatchAndLogFailuresFilter
-import xrd.zerocollateral.servers.ZeroCollateralHandlers.TrapeziteDatabaseHandler
+import xrd.zerocollateral.servers.ZeroCollateralHandlers.DatabaseHandler
 import kotlinx.coroutines.Dispatchers
 import mu.KotlinLogging.logger
 import org.http4k.core.*
@@ -37,7 +37,7 @@ fun main() {
 //        load()
 //    }
 
-    val logger = logger("xrd.trapezite")
+    val logger = logger("xrd.zerocollateral")
 
     val maxActiveDbConnections: Int = Config.dbMaxActive ?: 5
 
@@ -59,7 +59,7 @@ fun main() {
             )
         ), cacheConnectionPoolConfiguration)
 
-    val trapeziteDatabaseHandler = TrapeziteDatabaseHandler(cacheConnectionPool)
+    val trapeziteDatabaseHandler = DatabaseHandler(cacheConnectionPool)
 
     val contexts = RequestContexts()
 
@@ -103,13 +103,17 @@ fun main() {
         "$apiBase/verify" bind Method.POST to ChallengeStore.verifyChallenge()
     )
 
+    val feedbackRoutes = routes(
+        "$apiBase/submit_feedback" bind Method.POST to ZeroCollateralHandlers.feedback()
+    )
+
     val scrollPath = "$apiBase/catalog/datasets"
 
 //    val apiCatalogRoutes = routes(
 //            "$apiBase/catalog/search" bind Method.POST to basicAuthFilter(ReturnsImagesDynamoHandlers.searchReturnsInformation(scrollPath, storedReturnImageCatalog, Config.dynamoScrollLimit)),
 //            "$apiBase/catalog/datasets" bind Method.GET to basicAuthFilter(ReturnsImagesDynamoHandlers.scrollReturnsInformation(scrollPath, storedReturnImageCatalog, Config.dynamoScrollLimit, Query.string().optional("indexName"), Query.boolean().optional("onlyRef"))))
 
-    val service = routes(infraRoutes, docsRoutes, apiRoutes, rolaRoutes)
+    val service = routes(infraRoutes, docsRoutes, apiRoutes, rolaRoutes, feedbackRoutes)
     val serviceRoutes = when {
         Config.debugEnabled -> DebuggingFilters.PrintRequestAndResponse().then(service)
         else -> service

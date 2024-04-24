@@ -65,7 +65,7 @@ object Config {
     private val env = MapEnvironment.from(System.getProperties(), separator = propsSeparator) overrides
             MapEnvironment.from(System.getenv().toProperties(), separator = propsSeparator) overrides
             Environment.defaults(
-                serverPortKey of 8081,
+                serverPortKey of 8082,
                 debugEnabledKey of false,
                 targetEnvKey of "local",
                 dbConnectionTTLMillisKey of 5.minutes.inWholeMilliseconds,

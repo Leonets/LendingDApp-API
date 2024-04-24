@@ -1,12 +1,12 @@
 openapi: "3.0.0"
 info:
-  title: "Trapezite"
+  title: "ZeroCollateral"
   description: |
-    Trapezite
+    ZeroCollateral
 
   contact:
-    name: "Trapezite Team"
-  version: "<version>"
+    name: "ZeroCollateral Team"
+  version: "0.1.0"
 
 components:
   responses:
@@ -31,7 +31,7 @@ components:
           description: dAppDefinitionAddress reference
       example:
         {
-          "applicationName": "Trapezite",
+          "applicationName": "ZeroCollateral",
           "dAppDefinitionAddress": "account_rdx",
           "origin": "https://stokenet.trapezite.com/",
           "timeout": 60,
@@ -78,6 +78,69 @@ components:
               "type": "account"
             }
           ]
+    SubmitFeedback:
+      type: object
+      properties:
+        overall_opinion:
+          type: string
+        functions:
+          type: array
+          items:
+            type: string
+        understood_contract_protection:
+          type: string
+          enum:
+            - Yes
+            - No
+            - Mixed
+        loan_protection:
+          type: array
+          items:
+            type: string
+          # Add enum values based on the options in your form
+        errors_occurred:
+          type: string
+          enum:
+            - Yes
+            - No
+        nft_received:
+          type: string
+          enum:
+            - No, I haven't checked
+            - Yes
+        nft_removed:
+          type: string
+          enum:
+            - No, I haven't checked
+            - Yes
+        feedback:
+          type: string
+        stokenet_address:
+          type: string
+        mainnet_address:
+          type: string
+        telegram_nickname:
+          type: string
+        blackbox_testing:
+          type: string
+          enum:
+            - Yes
+            - No
+      example:
+        {
+          "overall_opinion": "7",
+          "functions": ["Supply", "Borrow"],
+          "understood_contract_protection": "Yes",
+          "loan_protection": ["Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating"],
+          "errors_occurred": "No",
+          "nft_received": "No, I haven't checked",
+          "nft_removed": "Yes",
+          "feedback": "The service is great! I enjoyed using it.",
+          "stokenet_address": "0x1234567890",
+          "mainnet_address": "0xabcdef123456",
+          "telegram_nickname": "example_user",
+          "blackbox_testing": "Yes"
+        }
 
 paths:
   "/infra/health":
@@ -177,6 +240,40 @@ paths:
       responses:
         "200":
           description: "Details of the newly created challenge"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  verification:
+                    type: string
+                example:
+                  {
+                    "verification": "true"
+                  }
+        "400":
+          $ref: '#/components/responses/BadRequest'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+
+  "/api/submit_feedback/":
+    post:
+      summary: "Submit feedback"
+      operationId: "Submit feedback"
+      tags:
+        - Feedback
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubmitFeedback'
+      responses:
+        "200":
+          description: "Answer to feedback"
           content:
             application/json:
               schema:
