@@ -1,0 +1,24 @@
+{
+  "overall_opinion": "8",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "Yes",
+  "loan_protection": [
+    "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+    "By making the loan collateral as other platforms already do",
+    "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)",
+    "Introducing the possibility of repaying the loan in monthly installments"
+  ],
+  "errors": "Yes",
+  "nft_received": "No",
+  "nft_removed": "No",
+  "feedback": "greate",
+  "stokenet_address": "stoke",
+  "mainnet_address": "main",
+  "telegram_nickname": "me",
+  "blackbox_testing": "Yes"
+}

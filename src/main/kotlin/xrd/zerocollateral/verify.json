@@ -1,0 +1,22 @@
+[
+  {
+    "challenge": "f0c5022a2c381b51f2a9d2245e4bac20cdd151f6db90f83f3f2edcf6fe755fe8",
+    "proof": {
+      "publicKey": "a12f3b6884797a44d979907eaaaba52644592d4d4e6093098311e67620e9d9cf",
+      "signature": "4adca8d7b47d6b8bc8a085c08522ab3127e2675f3d09f6c56e44f7cd12dc3ae5b915ed5d395cba941be250d29a454863318c764fc56c17e11a11563381a5ab01",
+      "curve": "curve25519"
+    },
+    "address": "identity_tdx_2_12fhdtpga9dykpzjvjccy5j6mpt25lgvhwce53rrn869fdxvdeq86t9",
+    "type": "persona"
+  },
+  {
+    "proof": {
+      "publicKey": "71b480232435963743746d6d4924b1ee4cf4b1e23acc594d816ceaac5c50ee22",
+      "signature": "1a882376232524621f78766f389710b8c89ce204568da1d0e84b61366c2c3e820c4f491b9f8189ee0a848100420d61f730d4317dea7f88e911697826775c4300",
+      "curve": "curve25519"
+    },
+    "address": "account_tdx_2_12870m7gklv3p90004zjnm39jrhpf2vseejrgpncptl7rhsagz8yjm9",
+    "challenge": "f0c5022a2c381b51f2a9d2245e4bac20cdd151f6db90f83f3f2edcf6fe755fe8",
+    "type": "account"
+  }
+]

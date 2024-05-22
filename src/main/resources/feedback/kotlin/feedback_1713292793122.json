@@ -1,0 +1,19 @@
+{
+  "overall_opinion": "8",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "Mixed",
+  "loan_protection": "By making the loan collateral as other platforms already do",
+  "errors": "No",
+  "nft_received": "No",
+  "nft_removed": "No",
+  "feedback": "",
+  "stokenet_address": "account_tdx_2_12ylu9txaskmyf2wmfttfuxhxn3ql8kk6hjgjuem5yxqucdq85j72ds",
+  "mainnet_address": "account_rdx12yqx249a9pvv8vmhvjgkzjtpzd7g3c82mw6yg3vhkjm493fh4ahx7y",
+  "telegram_nickname": "+55 15 98133 7355",
+  "blackbox_testing": "Yes"
+}

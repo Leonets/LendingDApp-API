@@ -1,0 +1,20 @@
+{
+  "overall_opinion": "7",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "Mixed",
+  "loan_protection": [
+    "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+    "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)"
+  ],
+  "errors": "I haven't checked",
+  "feedback": "",
+  "stokenet_address": "account_tdx_2_12x7j0c3hl5acpxz5pddsr6vde5vqsyg55dj7jx9hyftr0d99sz8s4d",
+  "mainnet_address": "account_rdx16xxkevf6mxpp4lxe9ww2fvzhjhah2v73yc8zys9z7nsvv2jh70xjr4",
+  "telegram_nickname": "@tchudamoon",
+  "blackbox_testing": "Yes"
+}

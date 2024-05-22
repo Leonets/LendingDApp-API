@@ -1,0 +1,206 @@
+"Excellent protocol! The best I've ever tested on the Radix network, due to the diversity and velocity of operations.
+The test went perfectly well, and the data was written instantly, without any errors, to the NFT received when I registered.
+I used each protocol option a few times, and, in addition to being fast, it is very easy to use.
+Impressive!
+Congratulations to the team!"
+
+"I really liked the idea, although I couldn't understand how to guarantee payment of the debt, but the protocol is very interesting,
+note that when I enter a fractional value the transaction gets an error."
+
+"I really think that lending platforms have a lot to evolve, but there are still no mechanisms for this.
+Perhaps real-world assets will bring some hope."
+
+"I believe that DAPP is very well designed and very well organized.
+For me there was no error, not even when I went to claim the faucet tokens.
+The only suggestion I have is regarding the front end, which could be cleaner and with more instructions
+for users, containing information boxes and instructions on top."
+
+"ITs an interesting idea to have a zero collateral protocol,
+i think that the main aspect of it its going to be how to protect the people that are lending and providing liquidity
+to the protocol, the risk of not getting paid is too high, finding a functional solution for this could be a really disruptive for the protocol...
+the option to make a deal with other protocols to block those users to interact with other
+dApps was something i thought about last week, but how this prevent those players to just send their assets to another
+account that doesnt have the bad player nft  and still interact with protocols? Unless you have a massive
+tracking system that can identify alternative accounts i think is something that it needs to be well thought and well implemented"
+
+"I believe that the BadPayer NFT alone is not enough to guarantee the repayment of loans.
+Malicious people would create countless wallets just to borrow and not pay.
+Maybe I still have a limited view of the project, I'll try to understand it better."
+
+"Remake it all, UI doesnt look attractive, and, i tried borrowing low and high volumes, and both of them,
+the fees were the same, doesnt make sense. Better to make a proportional fee for borrowers"
+
+"The loan does not show the accrued interest, when we pay in advance the interest appears and
+I was no longer able to pay the remainder because the amount is low"
+
+"Platform with an excellent idea but it has its risks. If it continues to grow with good ideas,
+it could become an innovative platform in the crypto market."
+
+"its good test fantastic platform in radix "
+
+"I managed to pay more than I borrowed. There should be a lock so we don't pay extra by mistake.
+Greater clarity of errors. Right now I haven't been able to get a loan and I don't know why. INVALID DECIMAL ERROR"
+
+"the application was very slow to verify the wallet between the Dapp, it may be due to the new IOS update on the
+RADIX wallet. Other than that, the project idea is incredible and I think it will be very important for the growth
+of the radix ecosystem."
+
+"I honestly didn't think the information described was very clear as well as the usability,
+after payment (if I did it correctly) the NFT from the bad payer didn't disappear, however the idea is very good and
+it's something that could be useful as a pioneer in the RADIX ecosystem, may the creators be successful."
+
+"After making a supply, it is not possible to make new ones."
+
+"This platform is fast, all functions works well. "
+
+"I like this protocol same way i like weft "
+
+"When typing a number with a decimal place, the error appears (error=generatorerror(invalidDecimal(490,1),
+it would be ideal to lock in the text box allowing you to enter only integers.
+After withdrawing the suply, the suply value is not updated in the text box,
+leaving the user without knowing the value he still has in the fund."
+
+"I thought the idea was really cool, I'm still going to test the platform further to better
+understand the functionality, I didn't find any bugs, but I was able to use the loan
+payment by entering 0, there was no blockage."
+
+"When trying to provide liquidity it generated an error:applicationError(VaultError(Resource))"
+
+"So far everything is in order, but when I request repayment the following error message appears.
+ApplicationError(PanicMessage(You cannot refund less than 20% of your loan ! @ src/ utils.rs:159:))"
+
+"- When borrowing with a date above 2024, an error is returned
+- It is possible to enter negative numbers for supply and borrow
+- It is not possible to make more than 1 supply or borrow at the same time"
+
+"I paid off the loan on time but I still have the Bad Payer NFT.
+I liked the idea of being blocked on other platforms if the person had the Bad Payer NFT,
+but the person could send this NFT to another account or other people"
+
+"When carrying out transactions with the wallet, some errors appeared, but apparently due to the waiting time,
+it could be due to the new Android update of the wallet.
+Another thing to mention is that the front end could be made more user-friendly for users
+who are not familiar with loans, as it would facilitate and help expand borrowers and lenders"
+
+"So far using the test net I found it to be a very interesting proposal, I feel very excited about the app"
+
+"All operations were carried out: supply, loans, withdrawal and repayment. The NFT appeared for being a bad payer"
+
+"I found some bugs in the supply liquidity part, and when paying the loan there are always amounts to pay"
+
+"I took out some loans:
+On the first loan I paid half and then the other half, but the system continued to indicate that I owed some amount.
+In some loans I was unable to authorize the transaction in the wallet, as it asked me to choose a interest rate (but no other rate other than the pre-selected rate appeared) so I was unable to complete the loan authorization
+Another loan transaction had a decimal error in the Wallet app, although the amount entered was a integer number. Even if the input was a decimal number, the problem occurred.
+After the deadline I did not receive the BadPayer NFT."
+
+"Deve ser informado a porcentagem e o valor total a ser pago pelo empréstimo, quando for realizar o pagamento,
+assim fica mais prático do que ter que calcular. "
+
+"I think you can put a restriction on badpayer to didnt
+use more and only can use the platform who have a minimum quantity of Radix."
+
+"1. I haven't seen the BADPLAYER NFT. A contract appeared in my wallet, I didn't understand what it was and even after paying it didn't disappear.
+2. The borrow to be paid should already include interest. To avoid the need for 2 transactions
+3. How to know how much I can borrow. Because if I want to get 1000 radix I can, but if I want to get 500 and then another 500 I can't.
+3.1 There could be a way to know our limit so we can have control instead of being forced to borrow the entire amount the first time (even without needing to)
+4. It could have the date MM/DD/YYYY so we know the day to pay"
+
+"I believe in the potential of the project and will follow its development."
+
+"My badpayer nft was not removed after the debt was paid.
+I paid the debt more than once and the spare balance did not return to my wallet"
+
+"I thought the proposal was cool, I'm looking forward to the app"
+
+"When returning the loan, the interest does not appear, then the app does not allow you to pay the interest because the amount is low
+congratulations on the project"
+
+"1-Very simple interface yet;
+2-I was able to borrow without providing supplies;
+3-In my NFT registration the message appeared 'No match found';
+4-If you use the buttons without entering any value, an error appears in the wallet;
+5-I was unable to lend, there must be a lack of liquidity to be able to lend without collateral;
+6-The protocol is not working I was unable to provide liquidity as well;
+7 - The item 'Your Position' must be very evident and highlighted to the user.
+8-the option to register disappeared"
+
+"These are my first days testing your dapp. So far I haven't had any problem
+to report since everything is working correctly even using two different computers and three different browers.
+I'm really enjoying how fast it is. I know it's still a testing dapp but the layout isn't
+very intuitive and friendly user. I found difficult to understand the real amount to repay.
+However I liked it and will continue to test it."
+
+"I had put a date in the past and I still got the loan,but it looks like
+you would fix it, I'll still make the payment and see if the NFT will be burned
+I couldn't deposit more than 2k xrd and I also couldn't"
+
+"At first I found the tests a little confusing, I think I need to direct the tests a little better.
+After a few minutes analyzing the page, I carried out the tests with some transactions not
+being carried out. The bad payer NFT I think took a while to appear in my wallet because I
+set the due date for the next day and received it well after that. The exact data is not
+recorded by me, but if I could check it, it would be great to update the protocol.
+I paid for the bad payer's NFT and it's still in my wallet and I can't tell if I made the lower payment."
+
+"Hi, I applied for a loan yesterday, but I missed the deadline for repayment and received
+a NFT LendingDapp BadPayer. Later on, I made the payment, but I wasn't exactly sure how much
+money I owed. So, I paid the value of the credit plus 10. But nor delete the bad payer nft."
+
+"I received the 'BadPayer' NFT when I didn't pay the loan.
+However, as I paid the loan little by little to test the app, when the
+outstanding balance was less than 100 I was unable to make the payment anymore,
+it always gave an error. I tried to borrow more to pay the arrears and it also failed."
+
+"Many times the transaction simply failed and was not carried out"
+
+"I paid the loan and the lendingDapp Badpayer did not disappear from the wallet"
+
+"I noticed that even though I made the loan payment, the BADPAYER NFT was not removed from the wallet."
+
+"I understood product innovation. would add a function to nft badpayer. it could be linked to a stake for
+example and follow that stake if it were removed to another account. the stake would be mandatory to be
+in the wallet and the NFT would be linked to that stake. I honestly don't know if this is possible, they are just ideas."
+
+"In the initial tests a few days ago, there were errors and freezes, but the form wasn't available for reporting.
+I redid some tests and the error didn't occur again."
+
+"Intersting and ivnovating idea"
+
+"I tested it but I still don't understand what the use would really be. But I will follow the development of the project."
+
+"I made all my considerations on the Telegram channel, and was promptly answered. I am gratefull for that.
+Unfortunately, I didn't test stop paying what I borrowed, so I didn't receive BadPayer nft,
+ but I'm going to test it today and send feedback through the Telegram channel."
+
+"I understood product innovation. would add a function to nft badpayer.
+it could be linked to a stake for example and follow that stake if it were removed to another account.
+ the stake would be mandatory to be in the wallet and the NFT would be linked to that stake.
+ I honestly don't know if this is possible, they are just ideas."
+
+ "SUPPLY working, presents error when you let the supply botton
+also we get a error message when use ',' instead of '.' - decimal error and try
+to supply an amount lower then 100 xrd. It's working for a 100.01 xrd supply.
+After that, I've got the LendingDapp NFT in my wallet.
+WITHDRAW botton functioning well.
+Tried to supply more 500, but doesn't work. Error message 'No loan accepted if the previous is not closed yet'.
+BORROW and REPAY functions working, but after taking a 250 xrd borrow and repaying
+ the entire amount two minutes later, an additional try for borrowing 500 xrd more
+ presented a error and I couldn't complete the transaction, said I had to payback
+ the previous one even if I just did it."
+
+"There were no errors during interactions between the radix wallet and the Dapp.
+The project is very well designed and I believe it will be very successful.
+I believe that the main thing to do is review the contract and the mathematical
+formulas to avoid problems, as happened with GABLE.
+The other project, WEFT, was on a giant rise, bringing the community and
+encouraging BETA TESTERS from the beginning (I was one), giving several Tokens
+as an incentive and along with that, offering even greater benefits to those who
+provided liquidity, with this , pleased the community and no one dumped the project.
+ I believe they should walk this way, with the community and distributing tokens to
+ those who help them with the tests. We know that the WEFT problem was just like GABLE,
+ with mathematical formulas, and I hope they review everything and are always ready to
+ listen to the community. Left Gable because the project owner didn't listen to the community"
+
+ "I really enjoyed using the platform."
+
+ "It was extremely easy to use but the protection of the contract can, in my opinion cause many doubts and fears for the users."

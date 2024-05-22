@@ -1,0 +1,23 @@
+{
+    "overall_opinion": "9",
+    "functions": [
+        "Supply",
+        "Borrow",
+        "Withdraw",
+        "Repay"
+    ],
+    "understood": "No",
+    "loan_protection": "Introducing the possibility of repaying the loan in monthly installments",
+    "errors": "Yes",
+    "nft_received": "Yes",
+    "nft_removed": "No",
+    "feedback": "When typing a number with a decimal place, 
+    the error appears (error=generatorerror(invalidDecimal(490,1),
+     it would be ideal to lock in the text box allowing you to enter only integers.
+     After withdrawing the suply, the suply value is not updated in the text box, 
+     leaving the user without knowing the value he still has in the fund.",
+    "stokenet_address": ".account_tdx_2_129naqrjr7df353056zw5lvtv360hga2w7f9lwj9qp04dxgm6ckecql",
+    "mainnet_address": "account_rdx12992s36xefq9sa5dajeq3dt7852k7y2ttuqmtdnvgxk9m6pdh8a400",
+    "telegram_nickname": "@Johnatassilva",
+    "blackbox_testing": "No"
+}

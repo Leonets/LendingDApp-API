@@ -1,0 +1,21 @@
+{
+  "overall_opinion": "9",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "No",
+  "loan_protection": [
+    "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+    "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)"
+  ],
+  "nft_received": "No",
+  "errors": "I haven't checked",
+  "feedback": "This plataform is fast, all functions works well. ",
+  "stokenet_address": "account_tdx_2_12y72c7pvzsqv3h9aca00ygc688d7e9zzdfhk2n3dkf58fkwdqlq4xn",
+  "mainnet_address": "account_rdx12y8tpunzar0cnfk79fwwxwm8qm0st6k4ffe8lue3rr4dp2yg3s04r7",
+  "telegram_nickname": "@selbach1976",
+  "blackbox_testing": "Yes"
+}

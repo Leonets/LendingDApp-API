@@ -1,0 +1,22 @@
+{
+  "overall_opinion": "7",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "Mixed",
+  "loan_protection": [
+    "By making the loan collateral as other platforms already do",
+    "Introducing the possibility of repaying the loan in monthly installments"
+  ],
+  "errors": "Yes",
+  "nft_received": "Yes",
+  "nft_removed": "No",
+  "feedback": "We know it's a test and it's obvious that it will evolve, but what bothered me most was the UI, some bugs in loan payments and collateral withdrawal.",
+  "stokenet_address": "account_tdx_2_128f4ccyu5klj0mt60ew8u93dp6dnsnn0ckrllryn07j25xrntyl0ur",
+  "mainnet_address": "account_rdx16ytrltxmmcmfy3rum0668mwswc9ghjj6nzp253eekhdynamw223kau",
+  "telegram_nickname": "jr_cryptofr3",
+  "blackbox_testing": "Yes"
+}

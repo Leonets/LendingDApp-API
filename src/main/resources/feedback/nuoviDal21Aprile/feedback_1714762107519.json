@@ -1,0 +1,19 @@
+{
+  "overall_opinion": "8",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "No",
+  "loan_protection": "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+  "errors": "I haven't checked",
+  "nft_received": "Yes",
+  "nft_removed": "Yes",
+  "feedback": "All operations were carried out: supply, loans, withdrawal and repayment. The NFT appeared for being a bad payer",
+  "stokenet_address": "account_tdx_2_12ym6gm6vhggl4tn0zezaugpfemk6y7gkcpj94drmxqseujnw347ekq",
+  "mainnet_address": "account_rdx12yskgj4068tt97578pm4zax7vzdcn3yz37yv2q9fnntg692qq32cxq",
+  "telegram_nickname": "@betobernardes",
+  "blackbox_testing": "No"
+}

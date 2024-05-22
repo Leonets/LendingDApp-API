@@ -1,0 +1,24 @@
+{
+  "overall_opinion": "8",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "No",
+  "loan_protection": [
+    "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+    "By making the loan collateral as other platforms already do",
+    "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)",
+    "Introducing the possibility of repaying the loan in monthly installments"
+  ],
+  "errors": "Yes",
+  "nft_received": "Yes",
+  "nft_removed": "Yes",
+  "feedback": "I found some bugs in the supply liquidity part, and when paying the loan there are always amounts to pay",
+  "stokenet_address": "account_tdx_2_128jkpgkwmekyezqaa5jymwqmz90dlm93krllw5eezdxpzafj9agv9w",
+  "mainnet_address": "account_rdx128dz4hhjs8mr3t0ke5wdhmene7zg0wn4zrujc4seqmngpcuxzy7lg3",
+  "telegram_nickname": "@AMiguelSCosta",
+  "blackbox_testing": "Yes"
+}

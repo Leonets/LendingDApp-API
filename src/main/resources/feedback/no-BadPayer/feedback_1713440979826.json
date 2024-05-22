@@ -1,0 +1,21 @@
+{
+    "overall_opinion": "10",
+    "functions": [
+        "Supply",
+        "Borrow",
+        "Withdraw",
+        "Repay"
+    ],
+    "understood": "Mixed",
+    "loan_protection": "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+    "errors": "I haven't checked",
+    "nft_received": "Yes",
+    "nft_removed": "Yes",
+    "feedback": "I really liked the idea, although I couldn't understand how to guarantee payment 
+    of the debt, but the protocol is very interesting, 
+    note that when I enter a fractional value the transaction gets an error.",
+    "stokenet_address": "account_tdx_2_129a77dkaf3t6p0djqc36g33pl2n482gmcmjct8mnmu7qmeymhg3awc",
+    "mainnet_address": "account_rdx129fm4kd5f52c4pwwavhaqvjjj3tpu8alngz36lx5f35t8uelhrd45m",
+    "telegram_nickname": "@RCAL86",
+    "blackbox_testing": "Yes"
+}

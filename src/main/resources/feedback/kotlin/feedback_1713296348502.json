@@ -1,0 +1,17 @@
+{
+  "overall_opinion": "9",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "Yes",
+  "loan_protection": "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)",
+  "errors": "I haven't checked",
+  "feedback": "",
+  "stokenet_address": "account_tdx_2_12xdjp09zlg3mhqhkfaw95pakptnsnhamtlm4yd9gjcj96elhuwcnwc",
+  "mainnet_address": "account_rdx129akjwv7dfkjtc4dglkacpnl6tm2x3vm3djsp54d30wx99kchv5jh2",
+  "telegram_nickname": "",
+  "blackbox_testing": "Yes"
+}

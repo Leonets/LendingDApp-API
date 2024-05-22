@@ -1,0 +1,21 @@
+{
+  "overall_opinion": "8",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "No",
+  "loan_protection": [
+    "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+    "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)",
+    "Introducing the possibility of repaying the loan in monthly installments"
+  ],
+  "errors": "I haven't checked",
+  "feedback": "I made all my considerations on the Telegram channel, and was promptly answered. I am gratefull for that.\nUnfortunately, I didn't test stop paying what I borrowed, so I didn't receive BadPayer nft, but I'm going to test it today and send feedback through the Telegram channel.",
+  "stokenet_address": "account_tdx_2_12x4rxxm6sfsmjrz2ej8g2hz6nyfz95hud2lepl692x48h9ay7hr0ad",
+  "mainnet_address": "account_rdx12yecct60qg4a6t4k2agymurl7jj93ll5w78t3dzdft5umw84wxnd7c",
+  "telegram_nickname": "RodrigoDPiva",
+  "blackbox_testing": "Yes"
+}

@@ -1,0 +1,18 @@
+{
+  "overall_opinion": "8",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "loan_protection": "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)",
+  "errors": "Yes",
+  "nft_received": "Yes",
+  "nft_removed": "No",
+  "feedback": "When carrying out transactions with the wallet, some errors appeared, but apparently due to the waiting time, it could be due to the new Android update of the wallet.\nAnother thing to mention is that the front end could be made more user-friendly for users who are not familiar with loans, as it would facilitate and help expand borrowers and lenders",
+  "stokenet_address": "account_tdx_2_129z8r8mfkyzwlfdwvt3r89we89tdfl23dg04w5dks25xtjwr6lmup9",
+  "mainnet_address": "account_rdx1295guxs24vv5fpvadf5p0tqhyds7r5sl2le0tr59hfhj3j8n8ues9d",
+  "telegram_nickname": "@anderso27686316",
+  "blackbox_testing": "Yes"
+}

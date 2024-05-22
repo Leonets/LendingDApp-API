@@ -1,0 +1,19 @@
+{
+  "overall_opinion": "10",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "No",
+  "loan_protection": "Introducing the possibility of repaying the loan in monthly installments",
+  "errors": "Yes",
+  "nft_received": "Yes",
+  "nft_removed": "Yes",
+  "feedback": "There were no errors during interactions between the radix wallet and the Dapp. The project is very well designed and I believe it will be very successful. I believe that the main thing to do is review the contract and the mathematical formulas to avoid problems, as happened with GABLE. The other project, WEFT, was on a giant rise, bringing the community and encouraging BETA TESTERS from the beginning (I was one), giving several Tokens as an incentive and along with that, offering even greater benefits to those who provided liquidity, with this , pleased the community and no one dumped the project. I believe they should walk this way, with the community and distributing tokens to those who help them with the tests. We know that the WEFT problem was just like GABLE, with mathematical formulas, and I hope they review everything and are always ready to listen to the community. Left Gable because the project owner didn't listen to the community",
+  "stokenet_address": "account_tdx_2_12yp2dxvf3jqszqjtfttqu7ake7f58kcxp0uvyhpxzsjlfgrdsz57f6",
+  "mainnet_address": "account_rdx12yhcruy2learjv9tk9v03kkcuuntltsnd87gmrr92sm0pzfyqwa6e9",
+  "telegram_nickname": "",
+  "blackbox_testing": "Yes"
+}

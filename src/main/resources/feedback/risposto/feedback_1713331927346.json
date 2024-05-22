@@ -1,0 +1,28 @@
+{
+    "overall_opinion": "8",
+    "functions": [
+        "Supply",
+        "Withdraw",
+        "Repay"
+    ],
+    "understood": "Mixed",
+    "loan_protection": [
+        "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+        "By making the loan collateral as other platforms already do",
+        "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)",
+        "Introducing the possibility of repaying the loan in monthly installments"
+    ],
+    "errors": "Yes",
+    "nft_received": "Yes",
+    "nft_removed": "Yes",
+    "feedback": "The protocol is quite intuitive, 
+    requiring better interface performance. 
+    And sometimes when trying to make a loan the 
+    following message 
+    appeared:\"error=GeneratorError(InvalidDecimal(\"\")\". 
+    I tried different values, but the error persisted.",
+    "stokenet_address": "account_tdx_2_12yrxn6q85tn8x2ryskr9rhxa0tj6wtcmc2cpz8qxxz9x0l72pfmj3y",
+    "mainnet_address": "account_rdx12xynj8sv6xpmyg2mr00jgsxzu2aeaaekpn83jj2j234f902y9q9u9l",
+    "telegram_nickname": "@andersonjub8",
+    "blackbox_testing": "Yes"
+}

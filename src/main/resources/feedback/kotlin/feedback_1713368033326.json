@@ -1,0 +1,18 @@
+{
+  "overall_opinion": "9",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "Yes",
+  "loan_protection": "By making the loan collateral as other platforms already do",
+  "nft_received": "No",
+  "nft_removed": "No",
+  "feedback": "The loan does not show the accrued interest, when we pay in advance the interest appears and I was no longer able to pay the remainder because the amount is low",
+  "stokenet_address": "account_tdx_2_12xkt3fedjnfc6dt28jn4r94428u2u7c83mhx04p6xk6aydmny4wryd",
+  "mainnet_address": "account_rdx128y5dd7cfgcf8c0f6egh25lfrhhmczcwtrsmqfta40t3pvj8p0trx0",
+  "telegram_nickname": "",
+  "blackbox_testing": "Yes"
+}

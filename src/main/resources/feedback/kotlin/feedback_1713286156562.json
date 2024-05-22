@@ -1,0 +1,20 @@
+{
+  "overall_opinion": "6",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Repay"
+  ],
+  "understood": "Yes",
+  "loan_protection": [
+    "By making the loan collateral as other platforms already do",
+    "Introducing the possibility of repaying the loan in monthly installments"
+  ],
+  "nft_received": "No",
+  "errors": "I haven't checked",
+  "feedback": "I took out some loans:\nOn the first loan I paid half and then the other half, but the system continued to indicate that I owed some amount.\nIn some loans I was unable to authorize the transaction in the wallet, as it asked me to choose a interest rate (but no other rate other than the pre-selected rate appeared) so I was unable to complete the loan authorization\nAnother loan transaction had a decimal error in the Wallet app, although the amount entered was a integer number. Even if the input was a decimal number, the problem occurred.\nAfter the deadline I did not receive the BadPayer NFT.",
+  "stokenet_address": "account_tdx_2_12y9etxqnk5p42s86s9yvtpne96rlyw0tf58c8nxyq00zx25pyc6kk8",
+  "mainnet_address": "account_rdx12x45mgrh5k4v53qupa9lluwyvkfcxrdn93v535tphvaelfztlse3t6",
+  "telegram_nickname": "@OgTheDog",
+  "blackbox_testing": "Yes"
+}

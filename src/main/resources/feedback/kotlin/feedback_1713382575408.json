@@ -1,0 +1,18 @@
+{
+  "overall_opinion": "8",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "Mixed",
+  "loan_protection": "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+  "nft_received": "No",
+  "errors": "I haven't checked",
+  "feedback": "I managed to pay more than I borrowed. There should be a lock so we don't pay extra by mistake.\n\nGreater clarity of errors. Right now I haven't been able to get a loan and I don't know why. \"INVALID DECIMAL ERROR\"",
+  "stokenet_address": " account_tdx_2_129qaqaj290fwv6v4jqj9k8t3m90dykc8eg66zldgaytu5tar9trjsh",
+  "mainnet_address": "account_rdx168vfdepzmx75x5mr03kkl06zwur59fe0ykwxhp307lvxcngcc8xhaf",
+  "telegram_nickname": "@Galencarp",
+  "blackbox_testing": "Yes"
+}

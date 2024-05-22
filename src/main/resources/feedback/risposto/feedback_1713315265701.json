@@ -1,0 +1,22 @@
+{
+    "overall_opinion": "10",
+    "functions": [
+        "Supply",
+        "Borrow",
+        "Withdraw",
+        "Repay"
+    ],
+    "understood": "No",
+    "loan_protection": "Introducing the possibility of repaying the loan in monthly installments",
+    "errors": "Yes",
+    "nft_received": "Yes",
+    "nft_removed": "No",
+    "feedback": "Hi, I applied for a loan yesterday, 
+    but I missed the deadline for repayment and received a NFT LendingDapp BadPayer. 
+    Later on, I made the payment, but I wasn't exactly sure how much money I owed. 
+    So, I paid the value of the credit plus 10. But nor delete the bad payer nft.",
+    "stokenet_address": "resource_tdx_2_1tknxxxxxxxxxradxrdxxxxxxxxx009923554798xxxxxxxxxtfd2jc",
+    "mainnet_address": "account_rdx128r5vq4w47nj4ml6k9rpxunf4exuu2yme2xwer2wfx7a9d6fhy7l03",
+    "telegram_nickname": "@ramirobarcelo",
+    "blackbox_testing": "Yes"
+}

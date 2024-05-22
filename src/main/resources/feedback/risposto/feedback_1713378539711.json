@@ -1,0 +1,20 @@
+{
+    "overall_opinion": "10",
+    "functions": [
+        "Supply",
+        "Borrow",
+        "Withdraw",
+        "Repay"
+    ],
+    "understood": "Yes",
+    "loan_protection": "Introducing the possibility of repaying the loan in monthly installments",
+    "nft_received": "Yes",
+    "errors": "I haven't checked",
+    "feedback": "In the initial tests a few days ago, 
+    there were errors and freezes, but the form wasn't available for reporting. 
+    I redid some tests and the error didn't occur again.",
+    "stokenet_address": "account_tdx_2_12xedkl0e6k0dml3rgrfm2xm9mj57qdqjwhmt42r0fclnzs5d5yyc8u",
+    "mainnet_address": "account_rdx12y46fcxlcs462f65rqz6tgjfue84flu2yzvg7yc8kqglpyrgfkszag",
+    "telegram_nickname": "https://t.me/jzy80963",
+    "blackbox_testing": "Yes"
+}

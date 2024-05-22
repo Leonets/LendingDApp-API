@@ -1,0 +1,17 @@
+{
+  "overall_opinion": "8",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "No",
+  "loan_protection": "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+  "errors": "I haven't checked",
+  "feedback": "So far everything is in order, but when I request repayment the following error message appears.\nApplicationError(PanicMessage(\"You cannot refund less than 20% of your loan ! @ src/ utils.rs:159:\"))",
+  "stokenet_address": "account_tdx_2_12xc0vqclcjns7y9r3ha8vkar2t8djtwrc8tpwxg3s8e87lpdz6es7j",
+  "mainnet_address": "account_rdx129fuewrdcy79wxrswglgq555a54twmxa083j2n6nygkl9p5pgvcm65",
+  "telegram_nickname": "@joaocripto1",
+  "blackbox_testing": "Yes"
+}

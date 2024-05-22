@@ -1,0 +1,16 @@
+{
+  "overall_opinion": "8",
+  "functions": [
+    "Supply",
+    "Borrow"
+  ],
+  "understood": "Mixed",
+  "loan_protection": "Introducing the possibility of repaying the loan in monthly installments",
+  "errors": "I haven't checked",
+  "nft_removed": "Yes",
+  "feedback": "",
+  "stokenet_address": "account_tdx_2_12yjr7vnjmpghqk6y3yhh8p0z44zp2q28g8nc4x7hued8vr02h9y3ey",
+  "mainnet_address": "account_rdx169sde9jc72hf4hwar9z9vvkz6pu826w2lkeajc9dz5ecpkyd7jsgjg",
+  "telegram_nickname": "@PedroVieira26",
+  "blackbox_testing": "Yes"
+}

@@ -1,0 +1,22 @@
+{
+  "overall_opinion": "8",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "Yes",
+  "loan_protection": [
+    "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+    "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)"
+  ],
+  "errors": "Yes",
+  "nft_received": "Yes",
+  "nft_removed": "Yes",
+  "feedback": "It's possible to repay even if the Amount of borrowings is 0. The amount used to repay remains in the account, but the user pays a fee. No other errors have been detected.",
+  "stokenet_address": "account_tdx_2_12y8nhnyq4rjh8us4cmzapr8tu0j0fqlgvfs433nxcfug99z8yzgrah",
+  "mainnet_address": "account_rdx12y36grlr9c552zwtkq8kenkzmlncsff09arl7r3f0zlw8h2uka60qk",
+  "telegram_nickname": "@amnseq",
+  "blackbox_testing": "Yes"
+}

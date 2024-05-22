@@ -1,0 +1,20 @@
+{
+  "overall_opinion": "6",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Repay"
+  ],
+  "understood": "No",
+  "loan_protection": [
+    "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+    "By making the loan collateral as other platforms already do",
+    "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)"
+  ],
+  "errors": "I haven't checked",
+  "feedback": "Platform with an excellent idea but it has its risks. If it continues to grow with good ideas, it could become an innovative platform in the crypto market.",
+  "stokenet_address": "account_tdx_2_129qgh74vnae2knha7s02lnvw2fzuvwkpu4mj243q4j7mlq9nlzxgdu",
+  "mainnet_address": "account_rdx168vvrqha86eudefv3g9r8jtlxqpwlgpruls5zy6cxcp2a0rwp0a4ap",
+  "telegram_nickname": "LoneWolf",
+  "blackbox_testing": "Yes"
+}

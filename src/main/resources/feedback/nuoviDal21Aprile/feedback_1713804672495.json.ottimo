@@ -1,0 +1,22 @@
+{
+  "overall_opinion": "7",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "Mixed",
+  "loan_protection": [
+    "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)",
+    "Introducing the possibility of repaying the loan in monthly installments"
+  ],
+  "errors": "No",
+  "nft_received": "No",
+  "nft_removed": "No",
+  "feedback": "These are my first days testing your dapp. So far I haven't had any problem to report since everything is working correctly even using two different computers and three different browers. \n\nI'm really enjoying how fast it is. I know it's still a testing dapp but the layout isn't very intuitive and friendly user. I found difficult to understand the real amount to repay. \n\nHowever I liked it and will continue to test it.",
+  "stokenet_address": "account_tdx_2_129pk82wnva0s6d55wct8l4pyacuz2e7kz76lc2ln2namr833c4c2cy",
+  "mainnet_address": "account_rdx1299qpqzwfh84002v803n282dem7ar5u8wnjsgkdp0302l0uk88u532",
+  "telegram_nickname": "@DCap3la",
+  "blackbox_testing": "Yes"
+}

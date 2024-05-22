@@ -1,0 +1,3 @@
+<?php
+mysqli_connect('localhost', 'trapezite_api', 'Tr4P3zi0.Ap1', 'trapezite') or die('KO');
+echo 'OK';

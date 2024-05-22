@@ -1,0 +1,26 @@
+{
+    "overall_opinion": "5",
+    "functions": [
+        "Supply",
+        "Borrow",
+        "Withdraw",
+        "Repay"
+    ],
+    "understood": "No",
+    "loan_protection": [
+        "By making the loan collateral as other platforms already do",
+        "Introducing the possibility of repaying the loan in monthly installments"
+    ],
+    "errors": "No",
+    "nft_received": "Yes",
+    "nft_removed": "No",
+    "feedback": "I honestly didn't think the information described was very clear 
+    as well as the usability, 
+    after payment (if I did it correctly) the NFT from the bad payer didn't disappear, 
+    however the idea is very good and it's something that could be useful as a pioneer 
+    in the RADIX ecosystem, may the creators be successful.",
+    "stokenet_address": "account_tdx_2_128kc3q3ckv56xes4f5r00qrfd84q7t256mp7jfdk4m2kpfgh9rce4h",
+    "mainnet_address": "account_rdx12xlh370p9va8jpfx6sllgu679jpfvhhry2v79jga558ye7l8fc58p5",
+    "telegram_nickname": "f360c4",
+    "blackbox_testing": "Yes"
+}

@@ -1,0 +1,23 @@
+{
+    "overall_opinion": "10",
+    "functions": [
+        "Supply",
+        "Borrow",
+        "Withdraw",
+        "Repay"
+    ],
+    "understood": "No",
+    "loan_protection": [
+        "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+        "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)"
+    ],
+    "errors": "Yes",
+    "nft_received": "Yes",
+    "nft_removed": "Yes",
+    "feedback": "My badpayer nft was not removed after the debt was paid.
+    I paid the debt more than once and the spare balance did not return to my wallet",
+    "stokenet_address": "account_tdx_2_128khkhfuxgncu6r3npsnjaqjtdhmj6egy94er9pefqp8q50wrp8yqa",
+    "mainnet_address": "account_rdx12y88l2mcgz3e707zrjfuqzjsvdnz4edqw0y6em4ca95jwu97jddzn8",
+    "telegram_nickname": "https://t.me/ragnarxrd",
+    "blackbox_testing": "Yes"
+}

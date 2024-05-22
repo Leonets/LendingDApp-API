@@ -1,0 +1,23 @@
+{
+  "overall_opinion": "10",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "Mixed",
+  "loan_protection": [
+    "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+    "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)",
+    "Introducing the possibility of repaying the loan in monthly installments"
+  ],
+  "errors": "No",
+  "nft_received": "Yes",
+  "nft_removed": "Yes",
+  "feedback": "So far using the test net I found it to be a very interesting proposal, I feel very excited about the app",
+  "stokenet_address": "account_tdx_2_128s7yrlfyspqfdprx09k5uy3nk8uygg9zwand4h3n7ntuejxpcs8d4",
+  "mainnet_address": "account_rdx1284zcwalqlp5j972fggzdqnk4l9eddcm8xw4zmaredlj0622t4wjd8",
+  "telegram_nickname": "Wellinton Sales",
+  "blackbox_testing": "Yes"
+}

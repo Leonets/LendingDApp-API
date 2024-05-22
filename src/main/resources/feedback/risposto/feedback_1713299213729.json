@@ -1,0 +1,19 @@
+{
+    "overall_opinion": "8",
+    "functions": [
+        "Supply",
+        "Borrow",
+        "Withdraw",
+        "Repay"
+    ],
+    "understood": "No",
+    "loan_protection": "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)",
+    "nft_received": "Yes",
+    "errors": "I haven't checked",
+    "feedback": "It was extremely easy to use but the protection of the contract can,
+     in my opinion cause many doubts and fears for the users.",
+    "stokenet_address": "account_tdx_2_12x9rplqagz2tr2hc390xkdzpyxu23zjurruex7j90dkvlzefnm0hej",
+    "mainnet_address": "account_rdx169a0tglhrfxvxtxx3mvuytkswehynuytyn9usaehk7tw0c4rxeewru",
+    "telegram_nickname": "@criptomaniapt ",
+    "blackbox_testing": "Yes"
+}

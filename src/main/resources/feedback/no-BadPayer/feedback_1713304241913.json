@@ -1,0 +1,24 @@
+{
+    "overall_opinion": "7",
+    "functions": [
+        "Supply",
+        "Borrow",
+        "Withdraw",
+        "Repay"
+    ],
+    "understood": "Mixed",
+    "loan_protection": [
+        "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)",
+        "Introducing the possibility of repaying the loan in monthly installments"
+    ],
+    "errors": "Yes",
+    "nft_received": "No",
+    "nft_removed": "Yes",
+    "feedback": "- When borrowing with a date 
+    above 2024, an error is returned\n- It is possible to enter negative numbers for supply and borrow
+    It is not possible to make more than 1 supply or borrow at the same time",
+    "stokenet_address": "account_tdx_2_12xy09yd2rzq7nuv4nh5l493r7umcyqpztcuatn43aq05mc0nduf3gm",
+    "mainnet_address": "account_rdx12ytp58ycu2yz7yg5dz3vlnzmalndkyrdgke3mjc2z37nlv8gw0z45v",
+    "telegram_nickname": "@Flavio_Dorisbor",
+    "blackbox_testing": "Yes"
+}

@@ -1,0 +1,17 @@
+{
+  "overall_opinion": "9",
+  "functions": [
+    "Borrow",
+    "Repay"
+  ],
+  "understood": "Yes",
+  "loan_protection": "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+  "errors": "Yes",
+  "nft_received": "No",
+  "nft_removed": "Yes",
+  "feedback": "When trying to provide liquidity it generated an error:applicationError(VaultError(Resource))",
+  "stokenet_address": "account_tdx_2_12yncumdl3fdejltdwvg87qgsfny5cjryetzrxk20jus7ymy8ndyc9q",
+  "mainnet_address": "account_rdx128syw30xax4ekkggy78cy8lg93htslr6xvemnsudnh95vt3z0dytyg",
+  "telegram_nickname": "@LCandido10",
+  "blackbox_testing": "Yes"
+}

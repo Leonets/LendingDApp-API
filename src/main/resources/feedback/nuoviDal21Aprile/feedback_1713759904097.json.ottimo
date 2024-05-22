@@ -1,0 +1,19 @@
+{
+  "overall_opinion": "8",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "Mixed",
+  "loan_protection": "By making the loan collateral as other platforms already do",
+  "errors": "No",
+  "nft_received": "No",
+  "nft_removed": "No",
+  "feedback": "I thought the idea was really cool, I'm still going to test the platform further to better understand the functionality, I didn't find any bugs, but I was able to use the loan payment by entering 0, there was no blockage.",
+  "stokenet_address": "account_tdx_2_12yq8lmr9w4xyrcdxeny3dl0r8790lcva9mzj7qvpuq4y7xslttldtj",
+  "mainnet_address": "account_rdx1296dwly4dfcaz75eppkm00nn3v2k5r8a00h3ymw5vah8s0wupsw5ye",
+  "telegram_nickname": "https://t.me/adriel_paiva",
+  "blackbox_testing": "Yes"
+}

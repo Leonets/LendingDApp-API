@@ -1,0 +1,23 @@
+{
+    "overall_opinion": "8",
+    "functions": [
+        "Supply",
+        "Borrow",
+        "Withdraw",
+        "Repay"
+    ],
+    "understood": "Mixed",
+    "loan_protection": "By making the loan collateral as other platforms already do",
+    "errors": "Yes",
+    "nft_received": "Yes",
+    "nft_removed": "No",
+    "feedback": "I believe that the \"bad payer\" NFT alone is not enough to guarantee 
+    the repayment of loans. 
+    Malicious people would create countless wallets just to borrow and not pay. 
+    Maybe I still have a limited view of the project, I'll try to understand it better.",
+    
+    "stokenet_address": "account_tdx_2_12xxrlaf53a72dkvdvglxyvw5575p4s2p6gllpz9hfzp9caappzjkc5",
+    "mainnet_address": "account_rdx1687ml4yvlhfdfxkjhlpu4ek3wp95jgf5dddvp5xrgwv6kujxg8d3yf",
+    "telegram_nickname": "Bruno",
+    "blackbox_testing": "No"
+}

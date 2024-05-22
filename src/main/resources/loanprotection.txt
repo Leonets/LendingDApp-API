@@ -1,0 +1,4 @@
+Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating: 40
+By making the loan collateral as other platforms already do: 32
+By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction): 29
+Introducing the possibility of repaying the loan in monthly installments: 31

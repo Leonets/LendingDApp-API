@@ -1,0 +1,36 @@
+{
+    "overall_opinion": "10",
+    "functions": [
+        "Supply",
+        "Borrow",
+        "Withdraw",
+        "Repay"
+    ],
+    "understood": "Mixed",
+    "loan_protection": [
+        "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+        "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)",
+        "Introducing the possibility of repaying the loan in monthly installments"
+    ],
+    "nft_received": "Yes",
+    "errors": "I haven't checked",
+    "feedback": "ITs an interesting idea to have a zero collateral protocol, 
+    
+    i think that the main aspect of it its going to be how to protect the people 
+    that are lending and providing liquidity to the protocol, 
+    the risk of not getting paid is too high, 
+    
+    finding a functional solution for this could be a really disruptive for the protocol... 
+    the option to make a deal with other protocols to block those users to interact 
+    with other dApps was something i thought about last week, 
+    
+    but how this prevent those players to just send their assets to another account 
+    that doesnt have the bad player nft  and still interact with protocols? 
+    Unless you have a massive tracking system that can identify alternative accounts 
+    i think is something that it needs to be well thought and well implemented",
+    
+    "stokenet_address": "account_tdx_2_12yaxydtx5qj63je2hm2493n5zuyvdvdea5qhkvqcs6a5qhu4z343kv",
+    "mainnet_address": "account_rdx16yjvfe0amf2g7c6mlqptkmxn55cw7tf8cpzwxa8pf6e8ly3nlft7qq",
+    "telegram_nickname": "Diegomet",
+    "blackbox_testing": "Yes"
+}

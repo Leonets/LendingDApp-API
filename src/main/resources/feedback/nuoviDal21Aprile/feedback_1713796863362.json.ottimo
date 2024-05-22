@@ -1,0 +1,23 @@
+{
+  "overall_opinion": "8",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "Yes",
+  "loan_protection": [
+    "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+    "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)",
+    "Introducing the possibility of repaying the loan in monthly installments"
+  ],
+  "errors": "Yes",
+  "nft_received": "No",
+  "nft_removed": "No",
+  "feedback": "1. I haven't seen the \"BADPLAYER\" NFT. A contract appeared in my wallet, I didn't understand what it was and even after paying it didn't disappear.\n\n2. The borrow to be paid should already include interest. To avoid the need for 2 transactions\n\n3. How to know how much I can borrow. Because if I want to get 1000 radix I can, but if I want to get 500 and then another 500 I can't.\n3.1 There could be a way to know our limit so we can have control instead of being forced to borrow the entire amount the first time (even without needing to)\n\n4. It could have the date MM/DD/YYYY so we know the day to pay",
+  "stokenet_address": " account_tdx_2_129qaqaj290fwv6v4jqj9k8t3m90dykc8eg66zldgaytu5tar9trjsh",
+  "mainnet_address": "account_rdx168vfdepzmx75x5mr03kkl06zwur59fe0ykwxhp307lvxcngcc8xhaf",
+  "telegram_nickname": "@Galencarp",
+  "blackbox_testing": "Yes"
+}

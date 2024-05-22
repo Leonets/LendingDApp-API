@@ -1,0 +1,17 @@
+{
+    "overall_opinion": "7",
+    "functions": [
+        "Supply",
+        "Borrow"
+    ],
+    "understood": "Mixed",
+    "loan_protection": "Introducing the possibility of repaying the loan in monthly installments",
+    "nft_received": "Yes",
+    "errors": "I haven't checked",
+    "feedback": "I tested it but I still don't understand what the use would really be. 
+    But I will follow the development of the project.",
+    "stokenet_address": "account_tdx_2_12ys56qk9a0dd34pywwv6rm8yufdnj380xlsdg666ej6w6uftmq4wp6",
+    "mainnet_address": "account_rdx12855yzh43ttvhsv397jjsldr69wqf2a5aqkzruqff8smc7m9gzwx65",
+    "telegram_nickname": "https://t.me/Danielpanda1998",
+    "blackbox_testing": "Yes"
+}

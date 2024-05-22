@@ -1,0 +1,20 @@
+{
+  "overall_opinion": "8",
+  "functions": [
+    "Supply",
+    "Repay"
+  ],
+  "understood": "Yes",
+  "loan_protection": [
+    "By making the loan collateral as other platforms already do",
+    "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)"
+  ],
+  "errors": "Yes",
+  "nft_received": "Yes",
+  "nft_removed": "No",
+  "feedback": "I provided liquids, but I would like to take out a loan and I am not able to, it must be because I did a test before and my debt is not showing up, which I would have to pay",
+  "stokenet_address": "account_tdx_2_128rtqquu05plzfp9234fhn3039mhqzrsvw9uz4htl0ruff557zx4g8",
+  "mainnet_address": "account_rdx12xmwuh99574djkm90n5hmkltcg6lh9nq5g9r7spyw2etee3tys7jn0",
+  "telegram_nickname": "Vinga.XRD",
+  "blackbox_testing": "Yes"
+}

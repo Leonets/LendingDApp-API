@@ -1,0 +1,24 @@
+{
+  "overall_opinion": "5",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "Mixed",
+  "loan_protection": [
+    "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+    "By making the loan collateral as other platforms already do",
+    "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)",
+    "Introducing the possibility of repaying the loan in monthly installments"
+  ],
+  "errors": "Yes",
+  "nft_received": "No",
+  "nft_removed": "Yes",
+  "feedback": "1-Very simple interface yet;\n2-I was able to borrow without providing supplies;\n3-In my NFT registration the message appeared \"No match found\";\n4-If you use the buttons without entering any value, an error appears in the wallet;\n5-I was unable to lend, there must be a lack of liquidity to be able to lend without collateral;\n6-The protocol is not working I was unable to provide liquidity as well;\n7 - The item \"Your Position\" must be very evident and highlighted to the user.\n8-the option to register disappeared",
+  "stokenet_address": "account_tdx_2_128p55sh0hg2whnum0hee4lzfsfdttuarv0erwarfs98j7elzcp44v6",
+  "mainnet_address": "account_rdx1690kh0x6kyku7hu5e4sds9ta3n9nw59nh0lrvcyk70yac4vvhwrwg7",
+  "telegram_nickname": "",
+  "blackbox_testing": "No"
+}

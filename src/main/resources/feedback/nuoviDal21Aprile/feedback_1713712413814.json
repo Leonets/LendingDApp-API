@@ -1,0 +1,22 @@
+{
+  "overall_opinion": "7",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "No",
+  "loan_protection": [
+    "Making deals with other platforms to block accounts that have received a 'BadPayer' NFT from operating",
+    "By making the loan collateral as other platforms already do"
+  ],
+  "errors": "No",
+  "nft_received": "Yes",
+  "nft_removed": "Yes",
+  "feedback": "I understood product innovation. would add a function to nft badpayer. it could be linked to a stake for example and follow that stake if it were removed to another account. the stake would be mandatory to be in the wallet and the NFT would be linked to that stake. I honestly don't know if this is possible, they are just ideas.",
+  "stokenet_address": "account_tdx_2_128n64thyv5ujsq5sspaddxzjleaz4mer88n0qutk6kml4w3t35elkr",
+  "mainnet_address": "account_rdx16y4sycau0590vysapu839qz4a3unke5ucl8epta7fpyw26w34qhf4z",
+  "telegram_nickname": "@HigoTexug0",
+  "blackbox_testing": "Yes"
+}

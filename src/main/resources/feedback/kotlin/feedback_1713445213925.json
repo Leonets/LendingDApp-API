@@ -1,0 +1,19 @@
+{
+  "overall_opinion": "5",
+  "functions": [
+    "Supply",
+    "Borrow",
+    "Withdraw",
+    "Repay"
+  ],
+  "understood": "No",
+  "loan_protection": "By introducing an evaluation mechanism for the account that makes the request (credit score evaluated by some IA prediction)",
+  "errors": "No",
+  "nft_received": "No",
+  "nft_removed": "No",
+  "feedback": "I think you can put a restriction on badpayer to didnt use more and only can use the platform who have a minimum quantity of Radix.",
+  "stokenet_address": "account_tdx_2_12xpspcq2q8u27x5qg99d97r8d6wv4vgkr377t6kj8j37v8ud7z43q4",
+  "mainnet_address": "account_rdx128j7ytfg2u7rkxv2cqgyw09agmy98qep3g4mw5ydzmk3fykrzszjl6",
+  "telegram_nickname": "@carloskemp",
+  "blackbox_testing": "Yes"
+}
